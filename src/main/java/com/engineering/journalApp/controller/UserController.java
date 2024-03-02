@@ -30,17 +30,17 @@ public class UserController {
         return user;
     }
 
-    @GetMapping("user/{userName}")
+    @GetMapping("{userName}")
     public User getUserByName(@PathVariable String userName){
         return userService.findByUserName(userName);
     }
 
-    @DeleteMapping("user/{userName}")
+    @DeleteMapping("{id}")
     public void deleteUser(@PathVariable ObjectId id){
         userService.deleteById(id);
     }
 
-    @PutMapping("user/{userName}")
+    @PutMapping("{userName}")
     public ResponseEntity<?> updateUserByName(@RequestBody User user,@PathVariable String userName){
     User oldUserName=userService.findByUserName(userName);
     if(oldUserName != null){

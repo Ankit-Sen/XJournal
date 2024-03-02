@@ -21,7 +21,7 @@ public class JournalEntryService {
     @Autowired
     private UserService userService;
 
-    @Transactional
+        @Transactional
     public void saveEntry(JournalEntry journalEntry, String userName) {
         try {
             User user = userService.findByUserName(userName);
@@ -31,7 +31,7 @@ public class JournalEntryService {
             userService.saveEntry(user);
         }catch (Exception e){
             System.out.println(e);
-            throw new RuntimeException("Error occured during creation");
+            throw new RuntimeException("Error occured during creationx`");
         }
     }
 
